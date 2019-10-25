@@ -1,0 +1,119 @@
+@supports (-webkit-appearance: -apple-pay-button) {
+
+  .ApplePayButton {
+    display: inline-block;
+    -webkit-appearance: -apple-pay-button;
+  }
+
+  .ApplePayButtonBlack {
+    -apple-pay-button-style: black;
+  }
+
+  .ApplePayButtonWhite {
+    -apple-pay-button-style: white;
+  }
+
+  .ApplePayButtonWhiteWithLine {
+    -apple-pay-button-style: white-outline;
+  }
+
+  .ApplePayButton > * {
+    display: none;
+  }
+
+  .ApplePayButtonPlain {
+    -apple-pay-button-type: plain;
+  }
+
+  .ApplePayButtonBuy {
+    -apple-pay-button-type: buy;
+  }
+
+  .ApplePayButtonDonate {
+    -apple-pay-button-type: donate;
+  }
+
+  .ApplePayButtonCheckout {
+    -apple-pay-button-type: check-out;
+  }
+
+  .ApplePayButtonSetup {
+    -apple-pay-button-type: setup;
+  }
+
+  .ApplePayButtonBook {
+    -apple-pay-button-type: book;
+  }
+
+  .ApplePayButtonSubscribe {
+    -apple-pay-button-type: subscribe;
+  }
+}
+
+@supports not (-webkit-appearance: -apple-pay-button) {
+
+  .ApplePayButton {
+    --apple-pay-scale: 1; /* (height / 32) */
+    display: inline-flex;
+    justify-content: center;
+    font-size: 12px;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 5px;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 200px;
+    min-height: 32px;
+    max-height: 64px;
+  }
+
+  .ApplePayButtonBlack {
+    background-image: -webkit-named-image(apple-pay-logo-white);
+    background-color: black;
+  }
+
+  .ApplePayButtonWhite {
+    background-image: -webkit-named-image(apple-pay-logo-black);
+    background-color: white;
+  }
+
+  .ApplePayButtonWhiteWithLine {
+    background-image: -webkit-named-image(apple-pay-logo-black);
+    background-color: white;
+    border: .5px solid black;
+  }
+
+  .ApplePayButton.ApplePayButtonBlack > .logo {
+    background-image: -webkit-named-image(apple-pay-logo-white);
+    background-color: black;
+  }
+
+  .ApplePayButton.ApplePayButtonWhite > .logo {
+    background-image: -webkit-named-image(apple-pay-logo-black);
+    background-color: white;
+  }
+
+  .ApplePayButton.ApplePayButtonWhiteWithLine > .logo {
+    background-image: -webkit-named-image(apple-pay-logo-black);
+    background-color: white;
+  }
+
+  .ApplePayButton > .text {
+    font-family: -apple-system, serif;
+    font-size: calc(1em * var(--apple-pay-scale));
+    font-weight: 300;
+    align-self: center;
+    margin-right: calc(2px * var(--apple-pay-scale));
+  }
+
+  .ApplePayButton > .logo {
+    width: calc(35px * var(--scale));
+    height: 100%;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    margin-left: calc(2px * var(--apple-pay-scale));
+    border: none;
+  }
+}
